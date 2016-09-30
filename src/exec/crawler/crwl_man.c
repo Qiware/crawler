@@ -9,6 +9,7 @@
  ******************************************************************************/
 #include "comm.h"
 #include "redo.h"
+#include "command.h"
 #include "crawler.h"
 #include "crwl_cmd.h"
 #include "crwl_man.h"
