@@ -15,3 +15,4 @@ temp/*
 tags
 stderr
 cscope.*
+src/demo/*.c

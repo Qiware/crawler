@@ -11,12 +11,12 @@ include $(PROJ)/make/build.mak
 INCLUDE = -I. \
 			-I./incl \
 			-I$(PROJ)/src/incl \
-			-I$(PROJ)/../c-ctrl/src/incl \
-			-I$(PROJ)/../c-ctrl/src/incl/http \
-			-I$(PROJ)/../c-ctrl/src/incl/redis \
-			-I$(PROJ)/../c-ctrl/src/incl/gumbo
+			-I$(PROJ)/../clang/src/incl \
+			-I$(PROJ)/../clang/src/incl/http \
+			-I$(PROJ)/../clang/src/incl/redis \
+			-I$(PROJ)/../clang/src/incl/gumbo
 INCLUDE += $(GLOBAL_INCLUDE)
-LIBS_PATH = -L$(PROJ)/lib -L$(PROJ)/../c-ctrl/lib -L/usr/lib/hiredis
+LIBS_PATH = -L$(PROJ)/lib -L$(PROJ)/../clang/lib -L/usr/lib/hiredis
 LIBS = -lpthread \
 			-lcore \
 	   		-lhiredis \

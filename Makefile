@@ -26,8 +26,9 @@ export GCC_LOG = ${PROJ_LOG}/gcc.log
 
 # 编译目录(注：编译按顺序执行　注意库之间的依赖关系)
 EXEC_DIR = "src/exec"
-DIR += "$(EXEC_DIR)/crawler"
 DIR += "$(EXEC_DIR)/filter"
+DIR += "$(EXEC_DIR)/monitor"
+DIR += "$(EXEC_DIR)/crawler"
 
 # 获取系统配置
 CPU_CORES = $(call func_cpu_cores)

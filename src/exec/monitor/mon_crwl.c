@@ -10,6 +10,7 @@
  ******************************************************************************/
 #include "sck.h"
 #include "redo.h"
+#include "command.h"
 #include "monitor.h"
 #include "crwl_cmd.h"
 

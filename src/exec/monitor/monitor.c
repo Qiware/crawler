@@ -204,11 +204,6 @@ static menu_cntx_t *mon_menu_init(mon_cntx_t *ctx)
         return NULL;
     }
 
-    /* > 加载搜索引擎菜单 */
-    child = mon_srch_menu(menu_ctx, ctx);
-
-    menu_add(menu_ctx->menu, child);
-
     /* > 加载爬虫系统菜单 */
     child = mon_crwl_menu(menu_ctx, ctx);
 

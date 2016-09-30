@@ -10,20 +10,19 @@ include $(PROJ)/make/build.mak
 
 INCLUDE = -I./incl \
 		  -I$(PROJ)/src/incl \
-		  -I$(PROJ)/src/incl/agent \
+		  -I$(PROJ)/../clang/src/incl \
 		  -I$(PROJ)/src/exec/monitor/incl \
-		  -I$(PROJ)/src/exec/spider/filter/incl \
-		  -I$(PROJ)/src/exec/spider/crawler/incl
+		  -I$(PROJ)/src/exec/filter/incl \
+		  -I$(PROJ)/src/exec/crawler/incl
 INCLUDE += $(GLOBAL_INCLUDE)
-LIBS_PATH = -L$(PROJ)/lib
+LIBS_PATH = -L$(PROJ)/lib -L$(PROJ)/../clang/lib
 LIBS = -lpthread -lcore
 LIBS += $(SHARED_LIB)
 
 SRC_LIST = monitor.c \
 			mon_conf.c \
 			mon_crwl.c \
-			mon_filter.c \
-			mon_search.c
+			mon_filter.c
 
 OBJS = $(subst .c,.o, $(SRC_LIST)) 
 HEADS = $(call func_get_dep_head_list, $(SRC_LIST))
