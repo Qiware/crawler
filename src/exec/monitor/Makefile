@@ -10,12 +10,12 @@ include $(PROJ)/make/build.mak
 
 INCLUDE = -I./incl \
 		  -I$(PROJ)/src/incl \
-		  -I$(PROJ)/../clang/src/incl \
+		  -I$(PROJ)/../cctrl/src/incl \
 		  -I$(PROJ)/src/exec/monitor/incl \
 		  -I$(PROJ)/src/exec/filter/incl \
 		  -I$(PROJ)/src/exec/crawler/incl
 INCLUDE += $(GLOBAL_INCLUDE)
-LIBS_PATH = -L$(PROJ)/lib -L$(PROJ)/../clang/lib
+LIBS_PATH = -L$(PROJ)/lib -L$(PROJ)/../cctrl/lib
 LIBS = -lpthread -lcore
 LIBS += $(SHARED_LIB)
 
