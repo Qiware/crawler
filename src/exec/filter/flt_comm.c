@@ -448,24 +448,22 @@ int flt_get_domain_ip_map(flt_cntx_t *ctx, const char *host, ipaddr_t *ip)
     snprintf(map_key.host, sizeof(map_key.host), "%s", host);
 
     map = hash_tab_query(ctx->domain_ip_map, &map_key, RDLOCK);
-    if (NULL == map) {
+    if (NULL != map) {
+        memcpy(ip, &map->ip[rand() % map->ip_num], sizeof(ipaddr_t));
+        hash_tab_unlock(ctx->domain_ip_map, &map_key, RDLOCK);
         log_trace(ctx->log, "Found domain ip map in talbe! %s", host);
         return FLT_OK; /* 成功 */
     }
-
-    memcpy(ip, &map->ip[rand() % map->ip_num], sizeof(ipaddr_t));
-
-    hash_tab_unlock(ctx->domain_ip_map, &map_key, RDLOCK);
 
     /* > 从域名黑名单中查找 */
     snprintf(bl_key.host, sizeof(bl_key.host), "%s", host);
 
     blacklist = hash_tab_query(ctx->domain_blacklist, &bl_key, RDLOCK);
-    if (NULL == blacklist) {
+    if (NULL != blacklist) {
+        hash_tab_unlock(ctx->domain_blacklist, &bl_key, RDLOCK);
         log_info(ctx->log, "Host [%s] in blacklist!", host);
         return FLT_ERR; /* 在黑名单中 */
     }
-    hash_tab_unlock(ctx->domain_blacklist, &bl_key, RDLOCK);
 
     /* > 通过DNS服务器查询 */
     memset(&hints, 0, sizeof(hints));

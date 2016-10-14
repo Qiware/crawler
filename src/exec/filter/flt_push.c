@@ -34,8 +34,7 @@ void *flt_push_routine(void *_ctx)
 
     while (1) {
         /* > 是否超过阈值 */
-        if (redis_llen(ctx->redis, conf->redis.taskq) > FLT_REDIS_UNDO_LIMIT_NUM)
-        {
+        if (redis_llen(ctx->redis, conf->redis.taskq) > FLT_REDIS_UNDO_LIMIT_NUM) {
             Sleep(1);
             continue;
         }
