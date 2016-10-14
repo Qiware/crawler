@@ -33,13 +33,10 @@
 
     <!-- 种子配置(DEPTH: 表示种子的当前深度) -->
     <SEED>
-        <ITEM URI="www.163.com" DEPTH="-1" />
-        <ITEM URI="http://sports.com" DEPTH="-1" />
-        <ITEM URI="http://sports.163.com/gjb/" DEPTH="-1" />
-        <ITEM URI="http://sports.163.com/xj/" DEPTH="-1" />
+      <ITEM URI="http://shici.chazidian.com/shiju/" DEPTH="-1" />
     </SEED>
     <!-- URL匹配列表 -->
     <MATCH>
-        <ITEM STR=".163.com" />
+        <ITEM STR="shici.chazidian.com/shiju" />
     </MATCH>
 </FILTER>
