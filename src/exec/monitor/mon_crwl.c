@@ -44,7 +44,7 @@ static int mon_crwl_entry(menu_cntx_t *menu_ctx, menu_item_t *menu, void *args)
 
     ctx->to.sin_family = AF_INET;
     ctx->to.sin_port = htons(ctx->conf->crwl.port);
-    inet_pton(AF_INET, ctx->conf->crwl.ip, &ctx->to.sin_addr);
+    inet_pton(AF_INET, ctx->conf->crwl.ipaddr, &ctx->to.sin_addr);
     return 0;
 }
 
